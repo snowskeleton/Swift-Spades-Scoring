@@ -13,15 +13,21 @@ struct ContentView: View {
     @State var players = ["", "", "", ""]
     @State var bids = [0, 0, 0, 0]
     @State var tricks = [0, 0, 0, 0]
-    @State var mcolor = [Color.blue, Color.green, Color.blue, Color.blue]
+    @State var mcolor = [Color.green, Color.blue, Color.blue, Color.blue]
     
     @State var t1name = ""
     @State var t2name = ""
     @State private var showingAlert = false
     //    @State private var showActionSheet = false
     @State private var showingDetail = false
-    @State private var startNew = false
+    @State private var showPicker = false
     @State private var details = false
+    @State var startNew = true
+    
+    var colours = ["Red", "Green", "Blue"]
+    @State private var myColourIndex = 1
+    @State private var myColour = "Green"
+    @State var range = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
     
     
     var body: some View {
@@ -35,7 +41,7 @@ struct ContentView: View {
                     Text("New")
                 } .padding(.leading)
                     .sheet(isPresented: $startNew) {
-                        AddPlayer(players: self.$players)
+                        AddPlayer(players: self.$players, show: self.$startNew)
                 }
                 
                 Spacer()
@@ -68,15 +74,13 @@ struct ContentView: View {
                 Spacer()
                 
                 Button(action: {
-                    //self.showingAlert.toggle()
+                    self.showPicker.toggle()
                 }) {
                     //bottom
                     PlayerView(highlight: $mcolor[0], name: $players[0], bid: $bids[3], tricks: $tricks[3])
-                        .alert(isPresented: $showingAlert) {
-                            Alert(title: Text("Hello SwiftUI"),
-                                  message: Text("This is some text"),
-                                  dismissButton: .default(Text("Update")))
-                    }
+//                    }
+////                        .overlay(isPresented: $showPicker) {
+//                            BidPickerView(bid: self.$bids[3])
                 }
                 Spacer()
                 
