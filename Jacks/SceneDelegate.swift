@@ -1,59 +1,51 @@
 //
 //  SceneDelegate.swift
-//  Jacks
+//  Gambling
 //
-//  Created by Isaac Lyons on 6/26/20.
+//  Created by Isaac Lyons on 6/23/20.
 //  Copyright © 2020 Blizzard Skeleton. All rights reserved.
 //
 
 import UIKit
 import SwiftUI
-import PartialSheet
+
+class PlayerList: ObservableObject {
+    @Published var list = ["John", "Jacob", "Jingleheimer", "Schmidt"]
+    @Published var bids = [0, 0, 0, 0]
+    @Published var tricks = [0, 0, 0, 0]
+    @Published var colors = [Color.green, Color.blue, Color.blue, Color.blue]
+    
+    func clear() -> Void {
+        self.list = ["", "", "", ""]
+    }
+    
+    func rotateColor() -> Void {
+//        var temp = self.colors
+        let last = colors.removeLast()
+        colors.insert(last, at: 0)
+    }
+}
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-  
-
+    var players = PlayerList()
+    
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        
-        
-        
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
-        // Get the managed object context from the shared persistent container.
-        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        // Create the SwiftUI view that provides the window contents.
+        let contentView = ContentView()
 
-        // Create the SwiftUI view and set the context as the value for the managedObjectContext environment keyPath.
-        // Add `@Environment(\.managedObjectContext)` in the views that will need the context.
-        let sheetManager: PartialSheetManager = PartialSheetManager()
-
-        let contentView = ContentView().environment(\.managedObjectContext, context).environmentObject(sheetManager)
-
-        if let windowScene = scene as? UIWindowScene {
-        let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = UIHostingController(
-            rootView: contentView
-        )
-        self.window = window
-        window.makeKeyAndVisible()
-            
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView)
+            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(players))
             self.window = window
             window.makeKeyAndVisible()
-            
-        }
-        
-            // 1.2 Add the manager as environmentObject
-
-        //Common SwiftUI code to add the rootView in your rootViewController
-        
         }
     }
 
@@ -83,11 +75,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-
-        // Save changes in the application's managed object context when the application transitions to the background.
-        (UIApplication.shared.delegate as? AppDelegate)?.saveContext()
     }
 
 
 }
 
+
+struct SceneDelegate_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
+}

@@ -9,6 +9,15 @@
           "revision": "9b905dcaeedb96d8c1793de945489ed76df6754f",
           "version": "2.1.6"
         }
+      },
+      {
+        "package": "SlideOverCard",
+        "repositoryURL": "https://github.com/moifort/swiftUI-slide-over-card.git",
+        "state": {
+          "branch": null,
+          "revision": "9fdc77c16d639d80a789daad0e036a24faf00825",
+          "version": "1.2.1"
+        }
       }
     ]
   },
