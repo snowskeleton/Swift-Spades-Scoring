@@ -9,8 +9,8 @@
 import SwiftUI
 
 struct AddPlayer: View {
-    @EnvironmentObject var players: PlayerList
-    //    @Binding var show:Bool
+    @EnvironmentObject var player: PlayerList
+    @Binding var show: Bool
     @State var t1name = ""
     @State var t2name = ""
     @State var showContentView = Bool()
@@ -21,15 +21,16 @@ struct AddPlayer: View {
             VStack {
                 VStack {
                     Form {
-                        TextField("Player 1", text: $players.list[0])
+                        TextField("Player 1", text: $player.list[0])
                             .padding()
-                        TextField("Player 3", text: $players.list[1])
+                        TextField("Player 2", text: $player.list[1])
                             .padding()
                         
-                        TextField("Player 3", text: $players.list[2])
+                        TextField("Player 3", text: $player.list[2])
                             .padding()
-                        TextField("Player 4", text: $players.list[3])
+                        TextField("Player 4", text: $player.list[3])
                             .padding()
+                        
                         TextField("Team 1 name", text: $t1name)
                             .padding()
                         TextField("Team 2 name", text: $t2name)
@@ -39,7 +40,7 @@ struct AddPlayer: View {
                 NavigationLink(destination: ContentView(), isActive: $showContentView) { EmptyView() }
                 
                 Button(action: {
-                    self.showContentView = true
+                    self.show = false
                 }) {
                     Text("Save")
                         .bold()
@@ -54,6 +55,6 @@ struct AddPlayer: View {
 
 struct AddPlayer_Previews: PreviewProvider {
     static var previews: some View {
-        AddPlayer().environmentObject(PlayerList())
+        AddPlayer(show: Binding.constant(true)).environmentObject(PlayerList())
     }
 }

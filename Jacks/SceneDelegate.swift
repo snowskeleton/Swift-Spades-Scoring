@@ -1,4 +1,3 @@
-//
 //  SceneDelegate.swift
 //  Gambling
 //
@@ -10,7 +9,7 @@ import UIKit
 import SwiftUI
 
 class PlayerList: ObservableObject {
-    @Published var list = ["John", "Jacob", "Jingleheimer", "Schmidt"]
+    @Published var list = ["", "", "", ""]
     @Published var bids = [0, 0, 0, 0]
     @Published var tricks = [0, 0, 0, 0]
     @Published var colors = [Color.green, Color.blue, Color.blue, Color.blue]
@@ -19,7 +18,7 @@ class PlayerList: ObservableObject {
         self.list = ["", "", "", ""]
     }
     
-    func rotateColor() -> Void {
+    func rotateDealer() -> Void {
 //        var temp = self.colors
         let last = colors.removeLast()
         colors.insert(last, at: 0)

@@ -1,4 +1,3 @@
-//
 //  ContentView.swift
 //  Spades Scoring
 //
@@ -11,79 +10,64 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var player: PlayerList
-//    let player = PlayerList()
     @State private var showingAlert = false
-    //    @State private var showActionSheet = false
-    @State private var showingDetail = false
-    @State private var showPicker = false
     @State private var details = false
-    @State private var numberInput = false
-    
+
     var body: some View {
-        ZStack {
-            //            if numberInput == false {
-            //                ZStack {
-            //                    Rectangle()
-            //                        .background(Color.blue)
-            //                        .opacity(0.3)
-            //                        //                    .fixedSize(horizontal: true, vertical: true)
-            //                        .overlay(TextField("Enter Bid", text: $somevar), alignment: .center)
-            //                        .frame(width: 260, height: 180, alignment: .center)
-            //                        .cornerRadius(20)
-            //                }
-            //            }
-            VStack {
-                //Top row
-                HStack {
-                    StartNew()
-                    
-                    Spacer()
-                    Text("Spades")
-                        .bold()
-                    Spacer()
-                    
-                    Button(action: {
-                        self.details.toggle()
-                    }) {
-                        Text("Details")
-                    }.padding(.trailing)
-                }
-                //
-                //Begin players
-                VStack {
-                    
-                    Spacer()
-                    
-                    PlayerButton(position: 2)
-                    
-                    Spacer()
-                    HStack {
-                        
-                        PlayerButton(position: 1)
-                        Spacer()
-                        PlayerButton(position: 3)
-                    }
-                    Spacer()
-                    
-                    PlayerButton(position: 0)
-                    
-                    Spacer()
-                    
-                    Button(action: {
-                        self.player.rotateColor()
-                    }) {
-                        Text("Next hand")
-                            .bold()
-                            .padding()
-                    }
-                }
-                //End players
+        VStack {
+            //Top row
+            HStack {
+                StartNew()
                 
+                Spacer()
+                Text("Spades")
+                    .bold()
+                Spacer()
+                
+                Button(action: {
+                    self.details.toggle()
+                }) {
+                    Text("Details")
+                }.padding(.trailing)
             }
+            //
+            //Begin players
+            VStack {
+                
+                Spacer()
+                
+                PlayerView(position: 2)
+                
+                Spacer()
+                
+                HStack {
+                    PlayerView(position: 1)
+                    Spacer()
+                    PlayerView(position: 3)
+                }.padding()
+                
+                Spacer()
+                
+                PlayerView(position: 0)
+                
+                Spacer()
+                
+                Button(action: {
+                    self.player.rotateDealer()
+                    self.player.bids = self.player.bids.map({_ in 0})
+                    self.player.tricks = self.player.tricks.map({_ in 0})
+                }) {
+                    Text("Next hand")
+                        .bold()
+                        .padding()
+                }
+            }
+            //End players
             
         }
         
     }
+    
 }
 
 func rotate(input: inout Array<Color>) -> Array<Color> {
@@ -95,7 +79,7 @@ func rotate(input: inout Array<Color>) -> Array<Color> {
 
 
 struct StartNew: View {
-    let mplayer = PlayerList()
+    @EnvironmentObject var player: PlayerList
     @State var startNew = false
     
     
@@ -107,40 +91,7 @@ struct StartNew: View {
             Text("New")
         } .padding(.leading)
             .sheet(isPresented: $startNew) {
-                AddPlayer().environmentObject(self.mplayer)
-        }
-    }
-}
-
-
-struct PlayerButton: View {
-    @EnvironmentObject var player: PlayerList
-    var position: Int
-    
-    var body: some View {
-        
-        Button(action: { }) {
-            VStack {
-                Text("\(player.list[self.position])")
-                Text("Bid \(player.bids[self.position])")
-                Text("Tricks \(player.tricks[self.position])")
-            }
-            .gesture(
-                TapGesture()
-                    .onEnded({
-                        self.player.bids[self.position] += 1
-                    })
-            )
-            .gesture(
-                LongPressGesture(minimumDuration: 0.7)
-                    .onEnded({_ in 
-                        self.player.bids[self.position] = 0
-                    }))
-            .padding(10)
-            .background(player.colors[self.position])
-            .cornerRadius(15)
-            .opacity(0.5)
-            .padding()
+                AddPlayer(show: self.$startNew).environmentObject(self.player)
         }
     }
 }
