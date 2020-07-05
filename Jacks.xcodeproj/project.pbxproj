@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		8000DB7724A7D581007C6F03 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8000DB7624A7D581007C6F03 /* AlertView.swift */; };
 		801B634A24A6DEE4000C9CEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B634924A6DEE4000C9CEE /* AppDelegate.swift */; };
 		801B634C24A6DEE4000C9CEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B634B24A6DEE4000C9CEE /* SceneDelegate.swift */; };
 		801B634F24A6DEE4000C9CEE /* Jacks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 801B634D24A6DEE4000C9CEE /* Jacks.xcdatamodeld */; };
@@ -17,16 +16,13 @@
 		801B636124A6DEF2000C9CEE /* AddPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B636024A6DEF2000C9CEE /* AddPlayer.swift */; };
 		801B636324A6DF05000C9CEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B636224A6DF05000C9CEE /* ContentView.swift */; };
 		801B636524A6DF0E000C9CEE /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B636424A6DF0D000C9CEE /* PlayerView.swift */; };
-		801B636724A6E538000C9CEE /* xAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B636624A6E538000C9CEE /* xAlertView.swift */; };
 		80358D5D24AAD7900090B8E9 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 80358D5C24AAD7900090B8E9 /* PartialSheet */; };
 		8050641A24AADF1900A78438 /* SlideOverCard in Frameworks */ = {isa = PBXBuildFile; productRef = 8050641924AADF1900A78438 /* SlideOverCard */; };
-		805E759624AAD05C000B7BFE /* BidPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805E759524AAD05C000B7BFE /* BidPickerView.swift */; };
 		80C0E98224B28388008FFB8C /* TopMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0E98124B28388008FFB8C /* TopMenuView.swift */; };
 		80CC32EE24B25FCE00989ACD /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CC32ED24B25FCE00989ACD /* TeamView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		8000DB7624A7D581007C6F03 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		801B634624A6DEE4000C9CEE /* Jacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		801B634924A6DEE4000C9CEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		801B634B24A6DEE4000C9CEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,8 +34,6 @@
 		801B636024A6DEF2000C9CEE /* AddPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayer.swift; sourceTree = "<group>"; };
 		801B636224A6DF05000C9CEE /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		801B636424A6DF0D000C9CEE /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
-		801B636624A6E538000C9CEE /* xAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = xAlertView.swift; sourceTree = "<group>"; };
-		805E759524AAD05C000B7BFE /* BidPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BidPickerView.swift; sourceTree = "<group>"; };
 		80C0E98124B28388008FFB8C /* TopMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuView.swift; sourceTree = "<group>"; };
 		80CC32ED24B25FCE00989ACD /* TeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,14 +77,11 @@
 				801B636424A6DF0D000C9CEE /* PlayerView.swift */,
 				80CC32ED24B25FCE00989ACD /* TeamView.swift */,
 				80C0E98124B28388008FFB8C /* TopMenuView.swift */,
-				805E759524AAD05C000B7BFE /* BidPickerView.swift */,
 				801B635224A6DEE5000C9CEE /* Assets.xcassets */,
 				801B635724A6DEE5000C9CEE /* LaunchScreen.storyboard */,
 				801B635A24A6DEE5000C9CEE /* Info.plist */,
 				801B634D24A6DEE4000C9CEE /* Jacks.xcdatamodeld */,
 				801B635424A6DEE5000C9CEE /* Preview Content */,
-				801B636624A6E538000C9CEE /* xAlertView.swift */,
-				8000DB7624A7D581007C6F03 /* AlertView.swift */,
 			);
 			path = Jacks;
 			sourceTree = "<group>";
@@ -182,14 +173,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				805E759624AAD05C000B7BFE /* BidPickerView.swift in Sources */,
 				801B634A24A6DEE4000C9CEE /* AppDelegate.swift in Sources */,
-				801B636724A6E538000C9CEE /* xAlertView.swift in Sources */,
 				801B636324A6DF05000C9CEE /* ContentView.swift in Sources */,
 				80C0E98224B28388008FFB8C /* TopMenuView.swift in Sources */,
 				801B636124A6DEF2000C9CEE /* AddPlayer.swift in Sources */,
 				801B634C24A6DEE4000C9CEE /* SceneDelegate.swift in Sources */,
-				8000DB7724A7D581007C6F03 /* AlertView.swift in Sources */,
 				80CC32EE24B25FCE00989ACD /* TeamView.swift in Sources */,
 				801B636524A6DF0E000C9CEE /* PlayerView.swift in Sources */,
 				801B634F24A6DEE4000C9CEE /* Jacks.xcdatamodeld in Sources */,
