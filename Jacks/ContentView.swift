@@ -14,7 +14,7 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            TopMenuView().environmentObject(self.player).environmentObject(self.team)
+            TopMenuView()
             //Begin players
             VStack {
                 
@@ -67,22 +67,6 @@ struct ContentView: View {
     }
     
 }
-
-func rotate(input: inout Array<Color>) -> Array<Color> {
-    var array = input
-    let last = array.removeLast()
-    array.insert(last, at: 0)
-    return array
-}
-
-
-//struct StartNew: View {
-//
-//
-//    var body: some View {
-//
-//    }
-//}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
