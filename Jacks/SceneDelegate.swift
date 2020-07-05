@@ -25,10 +25,21 @@ class PlayerList: ObservableObject {
     }
 }
 
+class TeamList: ObservableObject {
+    @Published var list = ["", ""]
+    @Published var bids = [0, 0]
+    @Published var tricks = [0, 0]
+    @Published var score = [0, 0]
+    func clear() -> Void {
+        self.list = ["", ""]
+    }
+}
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
     var players = PlayerList()
+    var teams = TeamList()
     
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
@@ -37,12 +48,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let contentView = ContentView()
+//        let contentView = ContentView()
+//            .environmentObject(players)
+//            .environmentObject(teams)
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
-            window.rootViewController = UIHostingController(rootView: contentView.environmentObject(players))
+            window.rootViewController = UIHostingController(rootView: ContentView().environmentObject(teams).environmentObject(players))
             self.window = window
             window.makeKeyAndVisible()
         }

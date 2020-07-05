@@ -3,34 +3,18 @@
 //
 //  Created by Isaac Lyons on 6/25/20.
 //  Copyright © 2020 Blizzard Skeleton. All rights reserved.
-//
 
 import SwiftUI
 
 struct ContentView: View {
     
     @EnvironmentObject var player: PlayerList
+    @EnvironmentObject var team: TeamList
     @State private var showingAlert = false
-    @State private var details = false
 
     var body: some View {
         VStack {
-            //Top row
-            HStack {
-                StartNew()
-                
-                Spacer()
-                Text("Spades")
-                    .bold()
-                Spacer()
-                
-                Button(action: {
-                    self.details.toggle()
-                }) {
-                    Text("Details")
-                }.padding(.trailing)
-            }
-            //
+            TopMenuView().environmentObject(self.player).environmentObject(self.team)
             //Begin players
             VStack {
                 
@@ -49,6 +33,20 @@ struct ContentView: View {
                 Spacer()
                 
                 PlayerView(position: 0)
+                
+                Spacer()
+                
+                HStack {
+                    TeamView(position: 0,
+                             bid: self.player.bids[0] + self.player.bids[2],
+                             tricks: self.player.tricks[0] + self.player.tricks[2])
+                    
+                    Spacer()
+                    
+                    TeamView(position: 1,
+                             bid: self.player.bids[1] + self.player.bids[3],
+                             tricks: self.player.tricks[1] + self.player.tricks[3])
+                }.padding()
                 
                 Spacer()
                 
@@ -78,26 +76,17 @@ func rotate(input: inout Array<Color>) -> Array<Color> {
 }
 
 
-struct StartNew: View {
-    @EnvironmentObject var player: PlayerList
-    @State var startNew = false
-    
-    
-    var body: some View {
-        Button(action: {
-            self.startNew.toggle()
-        }) {
-            
-            Text("New")
-        } .padding(.leading)
-            .sheet(isPresented: $startNew) {
-                AddPlayer(show: self.$startNew).environmentObject(self.player)
-        }
-    }
-}
+//struct StartNew: View {
+//
+//
+//    var body: some View {
+//
+//    }
+//}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environmentObject(PlayerList())
+        ContentView().environmentObject(PlayerList()).environmentObject(TeamList())
     }
 }
+

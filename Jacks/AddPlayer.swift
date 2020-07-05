@@ -1,20 +1,16 @@
-//
 //  AddPlayer.swift
 //  Spades Scoring
 //
 //  Created by Isaac Lyons on 6/25/20.
 //  Copyright © 2020 Blizzard Skeleton. All rights reserved.
-//
 
 import SwiftUI
 
 struct AddPlayer: View {
     @EnvironmentObject var player: PlayerList
+    @EnvironmentObject var team: TeamList
     @Binding var show: Bool
-    @State var t1name = ""
-    @State var t2name = ""
-    @State var showContentView = Bool()
-    
+
     
     var body: some View {
         NavigationView {
@@ -31,13 +27,12 @@ struct AddPlayer: View {
                         TextField("Player 4", text: $player.list[3])
                             .padding()
                         
-                        TextField("Team 1 name", text: $t1name)
+                        TextField("Team 1 name", text: $team.list[0])
                             .padding()
-                        TextField("Team 2 name", text: $t2name)
+                        TextField("Team 2 name", text: $team.list[1])
                             .padding()
                     }
                 }
-                NavigationLink(destination: ContentView(), isActive: $showContentView) { EmptyView() }
                 
                 Button(action: {
                     self.show = false
@@ -55,6 +50,6 @@ struct AddPlayer: View {
 
 struct AddPlayer_Previews: PreviewProvider {
     static var previews: some View {
-        AddPlayer(show: Binding.constant(true)).environmentObject(PlayerList())
+        AddPlayer(show: Binding.constant(true)).environmentObject(PlayerList()).environmentObject(TeamList())
     }
 }

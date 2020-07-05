@@ -1,15 +1,15 @@
-////
-////  Player.swift
-////  Spades Scoring
-////
-////  Created by Isaac Lyons on 6/26/20.
-////  Copyright © 2020 Blizzard Skeleton. All rights reserved.
-////
+//  Player.swift
+//  Spades Scoring
 //
+//  Created by Isaac Lyons on 6/26/20.
+//  Copyright © 2020 Blizzard Skeleton. All rights reserved.
+
 import SwiftUI
-//
+
 struct PlayerView: View {
     @EnvironmentObject var player: PlayerList
+    @EnvironmentObject var team: TeamList
+
     var position: Int
     
     var body: some View {
