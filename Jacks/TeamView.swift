@@ -12,6 +12,7 @@ struct TeamView: View {
     var position: Int
     var bid: Int
     var tricks: Int
+    var score: Int
 
     var body: some View {
         VStack {
@@ -25,10 +26,11 @@ struct TeamView: View {
         .cornerRadius(15)
         .opacity(0.5)
     }
+   
 }
 
 struct TeamView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamView(position: 0, bid: 0, tricks: 0).environmentObject(TeamList()).environmentObject(PlayerList())
+        TeamView(position: 0, bid: 0, tricks: 0, score: 0).environmentObject(TeamList()).environmentObject(PlayerList())
     }
 }

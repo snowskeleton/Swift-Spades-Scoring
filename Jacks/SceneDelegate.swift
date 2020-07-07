@@ -8,6 +8,7 @@
 import UIKit
 import SwiftUI
 
+
 class PlayerList: ObservableObject {
     @Published var list = ["", "", "", ""]
     @Published var bids = [0, 0, 0, 0]
@@ -33,6 +34,12 @@ class TeamList: ObservableObject {
     func clear() -> Void {
         self.list = ["", ""]
     }
+    func math(position: Int)  -> Void {
+           if self.tricks[position] >= self.bids[position] {
+               self.score[position] += self.tricks[position] * 10 + (self.tricks[position] - self.bids[position])
+           }
+           
+       }
 }
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

@@ -39,13 +39,15 @@ struct ContentView: View {
                 HStack {
                     TeamView(position: 0,
                              bid: self.player.bids[0] + self.player.bids[2],
-                             tricks: self.player.tricks[0] + self.player.tricks[2])
+                             tricks: self.player.tricks[0] + self.player.tricks[2],
+                             score: self.team.score[0])
                     
                     Spacer()
                     
                     TeamView(position: 1,
                              bid: self.player.bids[1] + self.player.bids[3],
-                             tricks: self.player.tricks[1] + self.player.tricks[3])
+                             tricks: self.player.tricks[1] + self.player.tricks[3],
+                             score: self.team.score[1])
                 }.padding()
                 
                 Spacer()
@@ -54,6 +56,8 @@ struct ContentView: View {
                     self.player.rotateDealer()
                     self.player.bids = self.player.bids.map({_ in 0})
                     self.player.tricks = self.player.tricks.map({_ in 0})
+                    self.team.math(position: 0)
+                    self.team.math(position: 1)
                 }) {
                     Text("Next hand")
                         .bold()
@@ -65,8 +69,9 @@ struct ContentView: View {
         }
         
     }
-    
+
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

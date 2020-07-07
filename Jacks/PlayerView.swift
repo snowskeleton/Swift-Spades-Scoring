@@ -9,12 +9,27 @@ import SwiftUI
 struct PlayerView: View {
     @EnvironmentObject var player: PlayerList
     @EnvironmentObject var team: TeamList
-
+    
     var position: Int
     
     var body: some View {
         
-        Button(action: { }) {
+        HStack {
+            Image(systemName: "plus")
+                .resizable()
+                .frame(width: 20, height: 20)
+                .gesture(
+                    TapGesture()
+                        .onEnded({
+                            self.player.bids[self.position] += 1
+                        })
+            )
+                .gesture(
+                    LongPressGesture(minimumDuration: 0.7)
+                        .onEnded({_ in
+                            self.player.bids[self.position] = 0
+                        }))
+            
             VStack {
                 Text("\(player.list[self.position])")
                 Text("Bid \(player.bids[self.position])")
@@ -24,17 +39,22 @@ struct PlayerView: View {
             .background(player.colors[self.position])
             .cornerRadius(15)
             .opacity(0.5)
-            .gesture(
-                TapGesture()
-                    .onEnded({
-                        self.player.bids[self.position] += 1
-                    })
+            
+            Image(systemName: "plus")
+                .resizable()
+                .frame(width: 20, height: 20)
+                .gesture(
+                    TapGesture()
+                        .onEnded({
+                            self.player.tricks[self.position] += 1
+                        })
             )
-            .gesture(
-                LongPressGesture(minimumDuration: 0.7)
-                    .onEnded({_ in
-                        self.player.bids[self.position] = 0
-                    }))
+                .gesture(
+                    LongPressGesture(minimumDuration: 0.7)
+                        .onEnded({_ in
+                            self.player.tricks[self.position] = 0
+                        }))
+            
         }
     }
 }
