@@ -19,10 +19,11 @@ struct TopMenuView: View {
         HStack {
             Button(action: {
                 self.startNew.toggle()
+                _ = self.player.clear()
+                self.player.colors.shuffle()
             }) {
-                
                 Text("New")
-            } .padding(.leading)
+            }.padding(.leading)
                 .sheet(isPresented: $startNew) {
                     AddPlayer(show: self.$startNew).environmentObject(self.player).environmentObject(self.team)
             }

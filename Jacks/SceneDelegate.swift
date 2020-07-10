@@ -13,6 +13,7 @@ class PlayerList: ObservableObject {
     @Published var list = ["", "", "", ""]
     @Published var bids = [0, 0, 0, 0]
     @Published var tricks = [0, 0, 0, 0]
+    @Published var blind = [false, false, false, false]
     @Published var colors = [Color.green, Color.blue, Color.blue, Color.blue]
     
     func clear() -> Void {
@@ -20,7 +21,6 @@ class PlayerList: ObservableObject {
     }
     
     func rotateDealer() -> Void {
-//        var temp = self.colors
         let last = colors.removeLast()
         colors.insert(last, at: 0)
     }
@@ -30,6 +30,7 @@ class TeamList: ObservableObject {
     @Published var list = ["", ""]
     @Published var bids = [0, 0]
     @Published var tricks = [0, 0]
+    @Published var bags = [0, 0]
     @Published var score = [0, 0]
     func clear() -> Void {
         self.list = ["", ""]

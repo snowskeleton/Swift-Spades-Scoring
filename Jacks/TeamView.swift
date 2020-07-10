@@ -13,24 +13,37 @@ struct TeamView: View {
     var bid: Int
     var tricks: Int
     var score: Int
-
+    var bags: Int
+   
     var body: some View {
         VStack {
             Text("\(team.list[self.position])")
-            Text("Bid \(self.bid)")
-            Text("Tricks \(self.tricks)")
-            Text("Score \(team.score[self.position])")
+            HStack {
+                VStack {
+                    Text("Bid")
+                    Text("\(self.bid)")
+                    Text("Tricks")
+                    Text("\(self.tricks)")
+                    //                    .padding(.bottom)
+                }
+                VStack {
+                    Text("Score")
+                    Text("\(score)")
+                    Text("Bags")
+                    Text("\(bags)")
+                }
+            }
         }
         .padding(10)
         .background(Color.purple)
         .cornerRadius(15)
         .opacity(0.5)
     }
-   
+    
 }
 
 struct TeamView_Previews: PreviewProvider {
     static var previews: some View {
-        TeamView(position: 0, bid: 0, tricks: 0, score: 0).environmentObject(TeamList()).environmentObject(PlayerList())
+        TeamView(position: 0, bid: 0, tricks: 0, score: 0, bags: 0).environmentObject(TeamList()).environmentObject(PlayerList())
     }
 }

@@ -9,8 +9,10 @@ import SwiftUI
 struct PlayerView: View {
     @EnvironmentObject var player: PlayerList
     @EnvironmentObject var team: TeamList
+    @GestureState private var longPressTap = false
     
     var position: Int
+    var distance: Int
     
     var body: some View {
         
@@ -29,17 +31,33 @@ struct PlayerView: View {
                         .onEnded({_ in
                             self.player.bids[self.position] = 0
                         }))
-            
-            VStack {
-                Text("\(player.list[self.position])")
-                Text("Bid \(player.bids[self.position])")
-                Text("Tricks \(player.tricks[self.position])")
+            Button(action: { }) {
+                VStack {
+                    Text("\(player.list[self.position])")
+                    HStack {
+                        VStack {
+                            Text("Bid")
+                            Text("\(player.bids[self.position])")
+                        }
+                        VStack {
+                            Text("Tricks")
+                            Text("\(player.tricks[self.position])")
+                        }
+                    }
+                }
             }
             .padding(10)
             .background(player.colors[self.position])
             .cornerRadius(15)
             .opacity(0.5)
-            
+            .gesture(
+                LongPressGesture(minimumDuration: 0.7)
+                    .onEnded({_ in
+                        if self.distance >= 100 {
+                            self.player.blind[self.position] = true
+                        }
+                    }))
+
             Image(systemName: "plus")
                 .resizable()
                 .frame(width: 20, height: 20)
@@ -61,6 +79,6 @@ struct PlayerView: View {
 
 struct PlayerView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerView(position: 1).environmentObject(PlayerList())
+        PlayerView(position: 1, distance: 0).environmentObject(PlayerList())
     }
 }
