@@ -18,6 +18,8 @@
 		801B636524A6DF0E000C9CEE /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B636424A6DF0D000C9CEE /* PlayerView.swift */; };
 		80358D5D24AAD7900090B8E9 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 80358D5C24AAD7900090B8E9 /* PartialSheet */; };
 		8050641A24AADF1900A78438 /* SlideOverCard in Frameworks */ = {isa = PBXBuildFile; productRef = 8050641924AADF1900A78438 /* SlideOverCard */; };
+		805893E324BB86BA00FDBE42 /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805893E224BB86BA00FDBE42 /* ShowView.swift */; };
+		809E561824BB799600B4FE2A /* KeyboardOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809E561724BB799600B4FE2A /* KeyboardOffset.swift */; };
 		80C0E98224B28388008FFB8C /* TopMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0E98124B28388008FFB8C /* TopMenuView.swift */; };
 		80CC32EE24B25FCE00989ACD /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CC32ED24B25FCE00989ACD /* TeamView.swift */; };
 /* End PBXBuildFile section */
@@ -34,6 +36,8 @@
 		801B636024A6DEF2000C9CEE /* AddPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayer.swift; sourceTree = "<group>"; };
 		801B636224A6DF05000C9CEE /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		801B636424A6DF0D000C9CEE /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
+		805893E224BB86BA00FDBE42 /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
+		809E561724BB799600B4FE2A /* KeyboardOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardOffset.swift; sourceTree = "<group>"; };
 		80C0E98124B28388008FFB8C /* TopMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuView.swift; sourceTree = "<group>"; };
 		80CC32ED24B25FCE00989ACD /* TeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -72,6 +76,7 @@
 			children = (
 				801B634924A6DEE4000C9CEE /* AppDelegate.swift */,
 				801B634B24A6DEE4000C9CEE /* SceneDelegate.swift */,
+				805893E224BB86BA00FDBE42 /* ShowView.swift */,
 				801B636224A6DF05000C9CEE /* ContentView.swift */,
 				801B636424A6DF0D000C9CEE /* PlayerView.swift */,
 				801B636024A6DEF2000C9CEE /* AddPlayer.swift */,
@@ -82,6 +87,7 @@
 				801B635A24A6DEE5000C9CEE /* Info.plist */,
 				801B634D24A6DEE4000C9CEE /* Jacks.xcdatamodeld */,
 				801B635424A6DEE5000C9CEE /* Preview Content */,
+				809E561724BB799600B4FE2A /* KeyboardOffset.swift */,
 			);
 			path = Jacks;
 			sourceTree = "<group>";
@@ -176,7 +182,9 @@
 				801B634A24A6DEE4000C9CEE /* AppDelegate.swift in Sources */,
 				801B636324A6DF05000C9CEE /* ContentView.swift in Sources */,
 				80C0E98224B28388008FFB8C /* TopMenuView.swift in Sources */,
+				809E561824BB799600B4FE2A /* KeyboardOffset.swift in Sources */,
 				801B636124A6DEF2000C9CEE /* AddPlayer.swift in Sources */,
+				805893E324BB86BA00FDBE42 /* ShowView.swift in Sources */,
 				801B634C24A6DEE4000C9CEE /* SceneDelegate.swift in Sources */,
 				80CC32EE24B25FCE00989ACD /* TeamView.swift in Sources */,
 				801B636524A6DF0E000C9CEE /* PlayerView.swift in Sources */,
