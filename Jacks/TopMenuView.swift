@@ -12,7 +12,7 @@ struct TopMenuView: View {
         @EnvironmentObject var player: PlayerList
         @EnvironmentObject var team: TeamList
         @State var details = false
-        @State var startNew = false
+        @State var startNew = true
 
 
     var body: some View {
@@ -20,7 +20,6 @@ struct TopMenuView: View {
             Button(action: {
                 self.startNew.toggle()
                 _ = self.player.clear()
-                self.player.colors.shuffle()
             }) {
                 Text("New")
             }.padding(.leading)

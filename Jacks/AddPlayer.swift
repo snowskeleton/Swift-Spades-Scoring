@@ -35,6 +35,7 @@ struct AddPlayer: View {
                 }
                 
                 Button(action: {
+                    self.player.colors.shuffle()
                     self.show = false
                 }) {
                     Text("Save")

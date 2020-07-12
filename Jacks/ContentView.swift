@@ -11,6 +11,7 @@ struct ContentView: View {
     @EnvironmentObject var player: PlayerList
     @EnvironmentObject var team: TeamList
     @State private var showingAlert = false
+    @State private var showMistake = false
 
     var body: some View {
         VStack {
@@ -21,7 +22,7 @@ struct ContentView: View {
                 Spacer()
                 
                 PlayerView(position: 2, distance: self.team.score[1] - self.team.score[0])
-
+                
                 Spacer()
                 
                 HStack {
@@ -56,35 +57,43 @@ struct ContentView: View {
                 Spacer()
                 
                 Button(action: {
-                    _ = self.teamMath(
-                        p1Bid: self.player.bids[0],
-                        p2Bid: self.player.bids[2],
-                        p1Tricks: self.player.tricks[0],
-                        p2Tricks: self.player.tricks[2],
-                        p1Blind: self.player.blind[0],
-                        p2Blind: self.player.blind[2],
-                        teamNumber: 0,
-                        score: &self.team.score[0])
+                    if self.player.tricks.reduce(0, +) == 13 {
+                        _ = self.teamMath(
+                            p1Bid: self.player.bids[0],
+                            p2Bid: self.player.bids[2],
+                            p1Tricks: self.player.tricks[0],
+                            p2Tricks: self.player.tricks[2],
+                            p1Blind: self.player.blind[0],
+                            p2Blind: self.player.blind[2],
+                            teamNumber: 0,
+                            score: &self.team.score[0])
+                        
+                        _ = self.teamMath(
+                            p1Bid: self.player.bids[1],
+                            p2Bid: self.player.bids[3],
+                            p1Tricks: self.player.tricks[1],
+                            p2Tricks: self.player.tricks[3],
+                            p1Blind: self.player.blind[1],
+                            p2Blind: self.player.blind[3],
+                            teamNumber: 1,
+                            score: &self.team.score[1])
+                        
+                        self.player.rotateDealer()
+                        self.player.bids = self.player.bids.map({_ in 0})
+                        self.player.tricks = self.player.tricks.map({_ in 0})
+                        self.player.blind = self.player.blind.map({_ in false})
+                    } else {
+                        self.showMistake = true
+                    }
                     
-                    _ = self.teamMath(
-                        p1Bid: self.player.bids[1],
-                        p2Bid: self.player.bids[3],
-                        p1Tricks: self.player.tricks[1],
-                        p2Tricks: self.player.tricks[3],
-                        p1Blind: self.player.blind[1],
-                        p2Blind: self.player.blind[3],
-                        teamNumber: 1,
-                        score: &self.team.score[1])
-
-                    self.player.rotateDealer()
-                    self.player.bids = self.player.bids.map({_ in 0})
-                    self.player.tricks = self.player.tricks.map({_ in 0})
-                    self.player.blind = self.player.blind.map({_ in false})
 
                 }) {
                     Text("Next Hand")
                         .bold()
                         .padding()
+                }
+                .alert(isPresented: $showMistake) {
+                Alert(title: Text("Whoops!"), message: Text("You did the math wrong"), dismissButton: .default(Text("Okay")))
                 }
             }
 
