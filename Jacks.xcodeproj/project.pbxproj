@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		801B634A24A6DEE4000C9CEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B634924A6DEE4000C9CEE /* AppDelegate.swift */; };
 		801B634C24A6DEE4000C9CEE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B634B24A6DEE4000C9CEE /* SceneDelegate.swift */; };
-		801B634F24A6DEE4000C9CEE /* Jacks.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 801B634D24A6DEE4000C9CEE /* Jacks.xcdatamodeld */; };
 		801B635324A6DEE5000C9CEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 801B635224A6DEE5000C9CEE /* Assets.xcassets */; };
 		801B635624A6DEE5000C9CEE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 801B635524A6DEE5000C9CEE /* Preview Assets.xcassets */; };
 		801B635924A6DEE5000C9CEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 801B635724A6DEE5000C9CEE /* LaunchScreen.storyboard */; };
@@ -28,7 +27,6 @@
 		801B634624A6DEE4000C9CEE /* Jacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		801B634924A6DEE4000C9CEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		801B634B24A6DEE4000C9CEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		801B634E24A6DEE4000C9CEE /* Jacks.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Jacks.xcdatamodel; sourceTree = "<group>"; };
 		801B635224A6DEE5000C9CEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		801B635524A6DEE5000C9CEE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		801B635824A6DEE5000C9CEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -85,7 +83,6 @@
 				801B635224A6DEE5000C9CEE /* Assets.xcassets */,
 				801B635724A6DEE5000C9CEE /* LaunchScreen.storyboard */,
 				801B635A24A6DEE5000C9CEE /* Info.plist */,
-				801B634D24A6DEE4000C9CEE /* Jacks.xcdatamodeld */,
 				801B635424A6DEE5000C9CEE /* Preview Content */,
 				809E561724BB799600B4FE2A /* KeyboardOffset.swift */,
 			);
@@ -188,7 +185,6 @@
 				801B634C24A6DEE4000C9CEE /* SceneDelegate.swift in Sources */,
 				80CC32EE24B25FCE00989ACD /* TeamView.swift in Sources */,
 				801B636524A6DF0E000C9CEE /* PlayerView.swift in Sources */,
-				801B634F24A6DEE4000C9CEE /* Jacks.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,19 +410,6 @@
 			productName = SlideOverCard;
 		};
 /* End XCSwiftPackageProductDependency section */
-
-/* Begin XCVersionGroup section */
-		801B634D24A6DEE4000C9CEE /* Jacks.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				801B634E24A6DEE4000C9CEE /* Jacks.xcdatamodel */,
-			);
-			currentVersion = 801B634E24A6DEE4000C9CEE /* Jacks.xcdatamodel */;
-			path = Jacks.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 801B633E24A6DEE4000C9CEE /* Project object */;
 }

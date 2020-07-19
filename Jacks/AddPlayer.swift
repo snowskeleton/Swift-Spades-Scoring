@@ -61,6 +61,8 @@ struct AddPlayer: View {
 
 struct AddPlayer_Previews: PreviewProvider {
     static var previews: some View {
-        AddPlayer(show: Binding.constant(true)).environmentObject(PlayerList()).environmentObject(TeamList())
+        AddPlayer(show: Binding.constant(true))
+            .environmentObject(PlayerList())
+            .environmentObject(TeamList())
     }
 }

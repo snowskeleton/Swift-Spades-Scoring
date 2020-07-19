@@ -45,6 +45,8 @@ struct TopMenuView: View {
 
 struct TopMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        TopMenuView().environmentObject(TeamList()).environmentObject(PlayerList())
+        TopMenuView()
+            .environmentObject(TeamList())
+            .environmentObject(PlayerList())
     }
 }

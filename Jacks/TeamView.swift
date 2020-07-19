@@ -24,7 +24,6 @@ struct TeamView: View {
                     Text("\(self.bid)")
                     Text("Tricks")
                     Text("\(self.tricks)")
-                    //                    .padding(.bottom)
                 }
                 VStack {
                     Text("Score")
