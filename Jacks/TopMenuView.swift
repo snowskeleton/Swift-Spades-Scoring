@@ -24,7 +24,9 @@ struct TopMenuView: View {
                 Text("New")
             }.padding(.leading)
                 .sheet(isPresented: $startNew) {
-                    AddPlayer(show: self.$startNew).environmentObject(self.player).environmentObject(self.team)
+                    AddPlayer(show: self.$startNew)
+                        .environmentObject(self.player)
+                        .environmentObject(self.team)
             }
             Spacer()
             Text("Spades")

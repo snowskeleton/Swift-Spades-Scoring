@@ -16,7 +16,7 @@ struct ContentView: View {
     var body: some View {
         VStack {
             TopMenuView()
-            //Begin players
+//              Begin players
             VStack {
                 
                 Spacer()
@@ -36,7 +36,7 @@ struct ContentView: View {
                 PlayerView(position: 0, distance: self.team.score[1] - self.team.score[0])
                 
                 Spacer()
-                //End players
+//                End players
 
                 HStack {
                     TeamView(position: 0,
@@ -93,7 +93,9 @@ struct ContentView: View {
                         .padding()
                 }
                 .alert(isPresented: $showMistake) {
-                Alert(title: Text("Whoops!"), message: Text("You did the math wrong"), dismissButton: .default(Text("Okay")))
+                    Alert(title: Text("Whoops!"),
+                          message: Text("You did the math wrong"),
+                          dismissButton: .default(Text("Okay")))
                 }
             }
 
@@ -101,11 +103,19 @@ struct ContentView: View {
         
     }
     
-    func teamMath(p1Bid: Int, p2Bid: Int, p1Tricks: Int, p2Tricks: Int, p1Blind: Bool, p2Blind: Bool, teamNumber: Int, score: inout Int) -> Void {
+    func teamMath(p1Bid: Int,
+                  p2Bid: Int,
+                  p1Tricks: Int,
+                  p2Tricks: Int,
+                  p1Blind: Bool,
+                  p2Blind: Bool,
+                  teamNumber: Int,
+                  score: inout Int) -> Void {
+        
         let totalBid = p1Bid + p2Bid
         let totalTricks = p1Tricks + p2Tricks
 
-        //nil bids
+//        nil bids
         if p1Bid == 0 {
             if p1Tricks == 0 {
                 score += (p1Blind == true ? 100 : 50)
@@ -120,17 +130,18 @@ struct ContentView: View {
                 score -= (p2Blind == true ? 100 : 50)
             }
         }
-        //
+//
+        
+//        basic scoring
         if totalTricks >= totalBid {
-            score += (totalTricks * 10) + (totalTricks - totalBid)
+            score += (totalBid * 10) + (totalTricks - totalBid)
+            self.team.bags[teamNumber] += totalTricks - totalBid
         } else {
             score -= totalBid * 10
         }
+        //
         
-        if totalTricks > totalBid {
-            self.team.bags[teamNumber] += totalTricks - totalBid
-        }
-
+//        bags
         if self.team.bags[teamNumber] >= 10 {
             score -= 100
             score -= score % 10
