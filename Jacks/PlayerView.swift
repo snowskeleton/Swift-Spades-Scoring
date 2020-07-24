@@ -55,14 +55,6 @@ struct PlayerView: View {
             .cornerRadius(15)
             .opacity(0.5)
             
-            //            .gesture(
-            //                LongPressGesture(minimumDuration: 0.7)
-            //                    .onEnded({_ in
-            //            if self.distance <= 100 {
-            //                self.player.blind[self.position].toggle()
-            //            }
-            //                    }))
-            
             Image(systemName: "plus")
                 .resizable()
                 .frame(width: 20, height: 20)
