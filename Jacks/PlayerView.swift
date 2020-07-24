@@ -31,7 +31,11 @@ struct PlayerView: View {
                         .onEnded({_ in
                             self.player.bids[self.position] = 0
                         }))
-            Button(action: { }) {
+            Button(action: {
+                if self.distance >= 100 {
+                    self.player.blind[self.position].toggle()
+                }
+            }) {
                 VStack {
                     Text("\(player.list[self.position])")
                     HStack {
@@ -47,17 +51,18 @@ struct PlayerView: View {
                 }
             }
             .padding(10)
-            .background(player.colors[self.position])
+            .background(self.player.blind[self.position] ? Color.red : player.colors[self.position])
             .cornerRadius(15)
             .opacity(0.5)
-            .gesture(
-                LongPressGesture(minimumDuration: 0.7)
-                    .onEnded({_ in
-                        if self.distance >= 100 {
-                            self.player.blind[self.position] = true
-                        }
-                    }))
-
+            
+            //            .gesture(
+            //                LongPressGesture(minimumDuration: 0.7)
+            //                    .onEnded({_ in
+            //            if self.distance <= 100 {
+            //                self.player.blind[self.position].toggle()
+            //            }
+            //                    }))
+            
             Image(systemName: "plus")
                 .resizable()
                 .frame(width: 20, height: 20)
