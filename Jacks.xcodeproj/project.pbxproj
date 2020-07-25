@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 50;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -137,8 +137,6 @@
 			);
 			mainGroup = 801B633D24A6DEE4000C9CEE;
 			packageReferences = (
-				80358D5B24AAD7900090B8E9 /* XCRemoteSwiftPackageReference "PartialSheet" */,
-				8050641824AADF1900A78438 /* XCRemoteSwiftPackageReference "swiftUI-slide-over-card" */,
 			);
 			productRefGroup = 801B634724A6DEE4000C9CEE /* Products */;
 			projectDirPath = "";
@@ -368,25 +366,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		80358D5B24AAD7900090B8E9 /* XCRemoteSwiftPackageReference "PartialSheet" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/AndreaMiotto/PartialSheet.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.1.6;
-			};
-		};
-		8050641824AADF1900A78438 /* XCRemoteSwiftPackageReference "swiftUI-slide-over-card" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/moifort/swiftUI-slide-over-card.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.2.1;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = 801B633E24A6DEE4000C9CEE /* Project object */;
 }
