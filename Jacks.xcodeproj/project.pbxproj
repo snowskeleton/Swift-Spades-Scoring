@@ -15,16 +15,13 @@
 		801B636124A6DEF2000C9CEE /* AddPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B636024A6DEF2000C9CEE /* AddPlayer.swift */; };
 		801B636324A6DF05000C9CEE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B636224A6DF05000C9CEE /* ContentView.swift */; };
 		801B636524A6DF0E000C9CEE /* PlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 801B636424A6DF0D000C9CEE /* PlayerView.swift */; };
-		80358D5D24AAD7900090B8E9 /* PartialSheet in Frameworks */ = {isa = PBXBuildFile; productRef = 80358D5C24AAD7900090B8E9 /* PartialSheet */; };
-		8050641A24AADF1900A78438 /* SlideOverCard in Frameworks */ = {isa = PBXBuildFile; productRef = 8050641924AADF1900A78438 /* SlideOverCard */; };
-		805893E324BB86BA00FDBE42 /* ShowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805893E224BB86BA00FDBE42 /* ShowView.swift */; };
 		809E561824BB799600B4FE2A /* KeyboardOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809E561724BB799600B4FE2A /* KeyboardOffset.swift */; };
 		80C0E98224B28388008FFB8C /* TopMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80C0E98124B28388008FFB8C /* TopMenuView.swift */; };
 		80CC32EE24B25FCE00989ACD /* TeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80CC32ED24B25FCE00989ACD /* TeamView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		801B634624A6DEE4000C9CEE /* Jacks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jacks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		801B634624A6DEE4000C9CEE /* Swift-Spades-Scoring.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift-Spades-Scoring.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		801B634924A6DEE4000C9CEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		801B634B24A6DEE4000C9CEE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		801B635224A6DEE5000C9CEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -34,7 +31,6 @@
 		801B636024A6DEF2000C9CEE /* AddPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPlayer.swift; sourceTree = "<group>"; };
 		801B636224A6DF05000C9CEE /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		801B636424A6DF0D000C9CEE /* PlayerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerView.swift; sourceTree = "<group>"; };
-		805893E224BB86BA00FDBE42 /* ShowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowView.swift; sourceTree = "<group>"; };
 		809E561724BB799600B4FE2A /* KeyboardOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardOffset.swift; sourceTree = "<group>"; };
 		80C0E98124B28388008FFB8C /* TopMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopMenuView.swift; sourceTree = "<group>"; };
 		80CC32ED24B25FCE00989ACD /* TeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamView.swift; sourceTree = "<group>"; };
@@ -45,8 +41,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8050641A24AADF1900A78438 /* SlideOverCard in Frameworks */,
-				80358D5D24AAD7900090B8E9 /* PartialSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +58,7 @@
 		801B634724A6DEE4000C9CEE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				801B634624A6DEE4000C9CEE /* Jacks.app */,
+				801B634624A6DEE4000C9CEE /* Swift-Spades-Scoring.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -74,7 +68,6 @@
 			children = (
 				801B634924A6DEE4000C9CEE /* AppDelegate.swift */,
 				801B634B24A6DEE4000C9CEE /* SceneDelegate.swift */,
-				805893E224BB86BA00FDBE42 /* ShowView.swift */,
 				801B636224A6DF05000C9CEE /* ContentView.swift */,
 				801B636424A6DF0D000C9CEE /* PlayerView.swift */,
 				801B636024A6DEF2000C9CEE /* AddPlayer.swift */,
@@ -114,11 +107,9 @@
 			);
 			name = Jacks;
 			packageProductDependencies = (
-				80358D5C24AAD7900090B8E9 /* PartialSheet */,
-				8050641924AADF1900A78438 /* SlideOverCard */,
 			);
 			productName = Jacks;
-			productReference = 801B634624A6DEE4000C9CEE /* Jacks.app */;
+			productReference = 801B634624A6DEE4000C9CEE /* Swift-Spades-Scoring.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -181,7 +172,6 @@
 				80C0E98224B28388008FFB8C /* TopMenuView.swift in Sources */,
 				809E561824BB799600B4FE2A /* KeyboardOffset.swift in Sources */,
 				801B636124A6DEF2000C9CEE /* AddPlayer.swift in Sources */,
-				805893E324BB86BA00FDBE42 /* ShowView.swift in Sources */,
 				801B634C24A6DEE4000C9CEE /* SceneDelegate.swift in Sources */,
 				80CC32EE24B25FCE00989ACD /* TeamView.swift in Sources */,
 				801B636524A6DF0E000C9CEE /* PlayerView.swift in Sources */,
@@ -329,8 +319,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.blizzardskeleton.Jacks;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blizzardskeleton.Swift-Spades-Scoring";
+				PRODUCT_NAME = "Swift-Spades-Scoring";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -349,8 +339,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.blizzardskeleton.Jacks;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.blizzardskeleton.Swift-Spades-Scoring";
+				PRODUCT_NAME = "Swift-Spades-Scoring";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -397,19 +387,6 @@
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		80358D5C24AAD7900090B8E9 /* PartialSheet */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 80358D5B24AAD7900090B8E9 /* XCRemoteSwiftPackageReference "PartialSheet" */;
-			productName = PartialSheet;
-		};
-		8050641924AADF1900A78438 /* SlideOverCard */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8050641824AADF1900A78438 /* XCRemoteSwiftPackageReference "swiftUI-slide-over-card" */;
-			productName = SlideOverCard;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 801B633E24A6DEE4000C9CEE /* Project object */;
 }
